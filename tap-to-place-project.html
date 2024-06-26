@@ -68,8 +68,7 @@ async function activateXR() {
   let model;
   loader.load("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/tree-spruce/model.gltf", function(gltf) {
     model = gltf.scene;
-    model.position.set(0, 0, -1); // Adjust as needed to center the model
-    model.scale.set(0.1, 0.1, 0.1); // Example scale adjustment, scale down by factor of 10
+    model.position.set(0, 0, -1); // Example position adjustment, adjust as needed
     scene.add(model);
   });
 
@@ -121,5 +120,6 @@ async function activateXR() {
 </script>
 </body>
 </html>
+
 
 
