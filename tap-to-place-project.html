@@ -69,6 +69,8 @@ async function activateXR() {
   loader.load("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/tree-spruce/model.gltf", function(gltf) {
     model = gltf.scene;
     model.position.set(0, 0, -1); // Example position adjustment, adjust as needed
+    model.rotation.y = Math.PI / 2; // Example rotation adjustment, rotate 90 degrees around y-axis
+    model.scale.set(0.1, 0.1, 0.1); // Example scale adjustment, scale down by factor of 10
     scene.add(model);
   });
 
