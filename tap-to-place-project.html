@@ -2,8 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>Tap to Place Demo</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Tap to Place Demo with Supabase GLTF Model</title>
 
   <!-- three.js -->
   <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
@@ -58,15 +59,17 @@ async function activateXR() {
 
   const loader = new THREE.GLTFLoader();
   let reticle;
-  loader.load("https://yourusername.github.io/your-repo/reticle.gltf", function(gltf) {
+  loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
     reticle = gltf.scene;
     reticle.visible = false;
     scene.add(reticle);
   });
 
   let model;
-  loader.load("https://yourusername.github.io/your-repo/models/myModel.gltf", function(gltf) {
+  loader.load("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/tree-spruce/model.gltf", function(gltf) {
     model = gltf.scene;
+    model.position.set(0, 0, -1); // Example position adjustment, adjust as needed
+    scene.add(model);
   });
 
   session.addEventListener("select", (event) => {
@@ -117,5 +120,4 @@ async function activateXR() {
 </script>
 </body>
 </html>
-
 
